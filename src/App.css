@@ -4,7 +4,28 @@
 
 /* Header */
 .headerImage {
-  width: 10px;
+  height: 20px;
+  margin: 18px;
+  align-self: end;
+  border: none;
+}
+
+.headerLogo {
+  height: 26px;
+  margin: 15px;
+  align-self: start;
+  text-align: left;
+  border: none;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, auto);
+  height: 56px;
+  top: 0px;
+  position: sticky;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(17, 12, 17, 0.1);
 }
 
 /* Hero */
