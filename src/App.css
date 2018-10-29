@@ -133,20 +133,65 @@
   align-self: center;
   justify-self: start;
 }
-/* At Glance */
-.day-link {
+
+/* Agenda At Glance */
+#agenda-at-glance {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+  "Title DaySelector"
+  "ToCalendar ."
+  "Agenda Agenda";
+  padding: 7vw 0 7vw 5vw;
+  text-align: left;
+  max-width: 960px;
+  margin: auto;
+}
+
+.day-selector {
+  margin: 26px;
+  line-height: 40px;
+}
+
+.to-calendar {
+  display: flex;
+  grid-area: ToCalendar;
+  border: none;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  justify-items: flex-start;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.to-calendar img {
+  padding: 0 3px;
+}
+
+.day-link {
+  font-family: Anton, Sans-Serif;
+  font-style: regular;
   text-decoration: none;
   background: #fff;
   border: 1px solid #000;
   color: #000;
-  padding: 3px;
+  padding: 2px 7px;
   margin: 3px;
 }
 
-.agendaImg {
-  width: 100vw;
-  padding: 2rem 0;
+.agenda-container {
+  margin-top: 3%;
+  grid-area: Agenda;
+  overflow: scroll;
+  -webkit-scrollbar: hidden;
+}
+
+.agenda-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Search Form */
