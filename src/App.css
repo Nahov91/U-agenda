@@ -29,58 +29,109 @@
 }
 
 /* Hero */
+#hero-container {
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/nahov91/image/upload/v1540819353/Mask_Group.png"),linear-gradient(right, rgba(17, 12, 17, 0), #686BF7) , url("https://res.cloudinary.com/nahov91/image/upload/v1540812371/Image.png");
+  background-position: center bottom, center center, center center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 100% 35%, cover, cover;
+}
+
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "Marked Marked"
-    "Location Time"
-    "Title ."
-    "Button .";
-  width: 100vw;
-  background-image: url("https://media.unleashgroup.io/admin/5b98c618e8d372a64882857e/569f4b10-c630-11e8-acce-c9e2624ac6b5.jpeg");
-  height: 400px;
-  background-size: cover;
+    "EventData"
+    "Title"
+    "Button";
+  height: 280px;
+  padding: 7vw 5vw;
+  text-align: left;
   color: white;
+  max-width: 960px;
+  margin: auto;
 }
 
 .title {
   grid-area: Title;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 32px;
   text-align: left;
-  margin-left: 3vw;
+  line-height: 40px;
+  font-family: 'Anton', sans-serif;
+  color: #110C11;
+}
+
+.hero-title {
+  grid-area: Title;
+  font-style: regular;
+  font-size: 56px;
+  text-align: left;
+  line-height: 50px;
+  font-family: 'Anton', sans-serif;
+  text-shadow: 0 1px 0 rgba(17, 12, 17, 0.48);
 }
 
 .btn {
   grid-area: Button;
-  color: #000;
+  color: #110C11;
   background-color: #fff;
   text-decoration: none;
   padding: 10px;
   font-weight: bold;
-  align-self: center;
-  justify-self: center;
+  align-self: start;
+  justify-self: start;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+.event-data {
+  display: grid;
+  grid-area: EventData;
+  grid-template-columns: auto 1fr;
+  grid-gap: 7px;
+  grid-template-areas: 
+  "EventName EventName"
+  "Location Time";
+  font-size: 12px;
 }
 
 .location {
   grid-area: Location;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  align-items: center;
+  grid-gap: 3px;
+}
+
+.location p {
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .time {
   grid-area: Time;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  grid-gap: 3px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
 }
 
-mark {
-  grid-area: Marked;
-  background-color: lightblue;
+.event-name {
+  grid-area: EventName;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #4AD9D9;
   color: white;
-  padding: 3px;
-  font-weight: 500;
-  width: 450px;
+  padding: 3px 7px;
+  font-weight: bold;
   align-self: center;
   justify-self: start;
-  margin-left: 2vw;
 }
 /* At Glance */
 .day-link {
