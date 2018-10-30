@@ -16,7 +16,7 @@ export default class Post extends Component {
       {this.props.allData.map(presentation=>(
         <li className="presentation-item" key={presentation._id}>
           <section className="post">
-            <h5 className="post-tag"> {presentation.stage.name} </h5>
+            <h5 className="post-tag" style={{ background: presentation.stage.color}} > {presentation.stage.name} </h5>
             <p className="post-location"> {presentation.stage.room} </p>
             <date className="post-date"> Day {presentation.day} {presentation.dateFrom} </date>
             <h3 className="post-title"> {presentation.title} </h3>

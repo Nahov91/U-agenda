@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: #110C11;
+  background: #f2f2f2;
 }
 
 /* Header */
@@ -226,8 +228,83 @@
   color: #C5C4C5;
 }
 
+/* Post */
+
+.presentations-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post {
+  display: grid;
+  grid-area: EventData;
+  grid-template-columns: auto auto 1fr;
+  grid-gap: 7px;
+  grid-template-areas: 
+  "Tag Location Time "
+  "PostTitle PostTitle PostTitle"
+  "PostDescription PostDescription PostDescription"
+  "Creator Creator Creator";
+  font-size: 12px;
+  background: #fff;
+  font-weight: bold;
+  font-family: 'Lato';
+  box-shadow: 0px 1px 4px rgba(17, 12, 17, 0.1);
+  margin: 15px 0;
+  padding: 15px;
+}
+
+.post-location {
+  grid-area: Location;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  align-items: center;
+  grid-gap: 3px;
+}
+
+.post-location p {
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.post-date {
+  grid-area: Time;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  grid-gap: 3px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.post-tag {
+  grid-area: Tag;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  padding: 3px 7px;
+  font-weight: bold;
+  align-self: center;
+  justify-self: start;
+}
+
+.post-title {
+  grid-area: PostTitle;
+  font-size: 16px;
+}
+
+.post-description {
+ grid-area: PostDescription;
+ font-size: 14px;
+ font-weight: 300;
+}
+
 /* Creator */
 .creator {
+  grid-area: Creator;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
