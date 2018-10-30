@@ -20,7 +20,7 @@ export default class Post extends Component {
             <p className="post-location"> {presentation.stage.room} </p>
             <date className="post-date"> Day {presentation.day} {presentation.dateFrom} </date>
             <h3 className="post-title"> {presentation.title} </h3>
-            <p className="post-description"> {presentation.abstract} </p>
+            <p className="post-description"> {presentation.abstract.substring(0,220)} <a href="google.com" className="more-link">...More</a> </p>
             <Creator />
           </section>
         </li>
