@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      allData: {},
+      allData: [],
     }
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
     .then(response => response.json())
     .then(data =>
       this.setState({
-        allData: data,
+        allData: data.data,
       }))
       .catch(err => alert("Error loading data from the server"));
   }
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header></Header>
-        <Main/>
+        <Main allData={this.state.allData} />
       </div>
     );
   }

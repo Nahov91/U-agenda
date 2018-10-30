@@ -1,19 +1,29 @@
-import React, { Component } from 'react'
-import Creator from './Creator';
+import React, { Component } from "react";
+import Creator from "./Creator";
 
 export default class Post extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      allData: this.props.allData
+    };
+  }
+
   render() {
     return (
-      <>
-      <section className="post">
-        <h5 className="post-tag"></h5>
-        <p className="post-place"></p>
-        <date className="post-date"></date>
-        <h3 className="post-title"></h3>
-        <p className="post-description"></p>
-        <Creator></Creator>
-        </section>
-      </>
-    )
+      <ul className="events-list">
+        <li>
+          <section className="post">
+            <h5 className="post-tag" />
+            <p className="post-place" />
+            <date className="post-date" />
+            <h3 className="post-title" />
+            <p className="post-description" />
+            <Creator />
+          </section>
+        </li>
+      </ul>
+    );
   }
 }

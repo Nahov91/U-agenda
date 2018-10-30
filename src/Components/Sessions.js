@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import Post from "./Post"
 
 export default class Sessions extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            allData: this.props.allData,
+          }
+    }
+
+
     render() {
         return (
             <section id="sessions">
@@ -21,7 +30,7 @@ export default class Sessions extends Component {
                         </select>
                     </form>
                 </div>
-                <Post/>
+                <Post allData= {this.props.allData}/>
             </section>
         )
     }
