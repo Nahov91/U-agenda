@@ -149,7 +149,7 @@
   "Title DaySelector"
   "ToCalendar ."
   "Agenda Agenda";
-  padding: 7vw 0 7vw 5vw;
+  padding: 5vh 5vw 5vh 5vw;
   text-align: left;
   max-width: 960px;
   margin: auto;
@@ -195,6 +195,7 @@
   grid-area: Agenda;
   overflow: scroll;
   -webkit-scrollbar: hidden;
+  margin-right: -5vw;
 }
 
 .agenda-container::-webkit-scrollbar {
@@ -204,7 +205,7 @@
 /* Search Form */
 
 #sessions {
-  padding: 7vw 5vw 7vw 5vw;
+  padding: 5vh 5vw 5vh 5vw;
   text-align: left;
   max-width: 960px;
   margin: auto;
