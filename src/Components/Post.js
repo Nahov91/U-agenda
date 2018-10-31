@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Creator from "./Creator";
+/* import Creator from "./Creator"; */
 
 export default class Post extends Component {
   constructor(props) {
@@ -33,7 +33,14 @@ export default class Post extends Component {
             </div>
             <h3 className="post-title"> {presentation.title} </h3>
             <p className="post-description"> {presentation.abstract.substring(0,220)} <a href="google.com" className="more-link">...More</a> </p>
-            <Creator allData={this.props.allData} />
+          {presentation.speakers.slice(0,1).map(speaker =>(
+            <section className="creator">
+              <img src={speaker.avatar.url} alt={speaker.name} className="creator-img" />
+              <h5 className="creator-name"> {speaker.name} </h5>
+              <h6 className="creator-company"> {speaker.post} · {speaker.company} </h6>
+            </section>
+          ))}
+          
           </section>
         </li>
       ))}

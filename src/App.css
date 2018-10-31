@@ -320,10 +320,17 @@
 
 .creator-name {
   grid-area: CreatorName;
+  font-size: 14px;
+  font-family: 'Lato';
+  line-height: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .creator-img {
   grid-area: CreatorImage;
+  width: 36px;
+  border-radius: 50%;
 }
 
 .creator-company {
