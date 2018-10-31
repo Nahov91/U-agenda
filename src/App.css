@@ -309,13 +309,22 @@
 }
 
 /* Creator */
-.creator {
+
+.creator-list {
   grid-area: Creator;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.creator {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
     "CreatorImage CreatorName"
     "CreatorImage CreatorCompany";
+  grid-gap: 10px;
+  padding-right: 5px;
 }
 
 .creator-name {
@@ -325,6 +334,7 @@
   line-height: 16px;
   margin: 0;
   padding: 0;
+  color: #110C11;
 }
 
 .creator-img {
@@ -335,4 +345,11 @@
 
 .creator-company {
   grid-area: CreatorCompany;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Lato';
+  padding: 0;
+  margin: 0;
+  line-height: 14px;
+  color: #797678;
 }
