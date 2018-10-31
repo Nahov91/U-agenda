@@ -5,9 +5,9 @@ export default class Hero extends Component {
     super(props);
 
     this.state = {
-      allData: this.props.allData,
-    }
-  };
+      allData: this.props.allData
+    };
+  }
 
   render() {
     return (

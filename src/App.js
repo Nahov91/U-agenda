@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './Components/Header';
-import Main from './Components/Main';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import Main from "./Components/Main";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      allData: [],
-    }
+      allData: []
+    };
   }
-
 
   componentDidMount() {
-    fetch('https://unleash.site/api/agendas/list?event=5b86aa9be9bef44a7491e80f')
-    .then(response => response.json())
-    .then(data =>
-      this.setState({
-        allData: data.data,
-      }))
+    fetch(
+      "https://unleash.site/api/agendas/list?event=5b86aa9be9bef44a7491e80f"
+    )
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          allData: data.data
+        })
+      )
       .catch(err => alert("Error loading data from the server"));
   }
-  
 
   render() {
     return (
       <div className="App">
-        <Header></Header>
+        <Header />
         <Main allData={this.state.allData} />
       </div>
     );
