@@ -13,7 +13,7 @@ export default class Post extends Component {
   render() {
     return (
       <ul className="presentations-list">
-      {this.props.allData.map(presentation=>(
+      {this.props.allData.slice(0,15).map(presentation=>(
         <li className="presentation-item" key={presentation._id}>
           <section className="post">
             <h5 className="post-tag" style={{ background: presentation.stage.color}} > {presentation.stage.name} </h5>
