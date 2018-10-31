@@ -18,13 +18,13 @@ export default class Sessions extends Component {
                 <div className="form-wrapper">
                     <form action="" id="search-form">
                         <input type="search" className="search" placeholder="Search name, keyword..." />
-                        <select  className="topic" name="Topic">
-                            <option value="Topic" disabled selected value>Topic</option>
+                        <select  className="topic" name="Topic" defaultValue="Topic">
+                            <option value="Topic" disabled>Topic</option>
                             <option value="going digital">Going digital</option>
                             <option value="second">Second</option>
                         </select>
-                        <select className="date" name="Day">
-                            <option value="Day" disabled selected value>Day</option>
+                        <select className="date" name="Day" defaultValue="Day">
+                            <option value="Day" disabled >Day</option>
                             <option value="Day 1">Day 1</option>
                             <option value="Day 2">Day 2</option>
                         </select>

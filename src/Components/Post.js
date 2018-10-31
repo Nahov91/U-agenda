@@ -35,7 +35,7 @@ export default class Post extends Component {
             <p className="post-description"> {presentation.abstract.substring(0,220)} <a href="google.com" className="more-link">...More</a> </p>
           <ul className="creator-list">
           {presentation.speakers.map(speaker =>(
-            <li className="creator">
+            <li key={speaker._id} className="creator">
               <img src={speaker.avatar.url} alt={speaker.name} className="creator-img" />
               <h5 className="creator-name"> {speaker.name} </h5>
               <h6 className="creator-company"> {speaker.post} · {speaker.company} </h6>

@@ -40,7 +40,7 @@
 /* Hero */
 #hero-container {
   width: 100%;
-  background-image: url("https://res.cloudinary.com/nahov91/image/upload/v1540819353/Mask_Group.png"),linear-gradient(right, rgba(17, 12, 17, 0), #686BF7) , url("https://res.cloudinary.com/nahov91/image/upload/v1540812371/Image.png");
+  background-image: url("https://res.cloudinary.com/nahov91/image/upload/v1540819353/Mask_Group.png"),linear-gradient(to left, rgba(17, 12, 17, 0), #686BF7) , url("https://res.cloudinary.com/nahov91/image/upload/v1540812371/Image.png");
   background-position: center bottom, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 100% 35%, cover, cover;
