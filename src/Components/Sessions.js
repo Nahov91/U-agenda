@@ -1,16 +1,33 @@
 import React, { Component } from "react";
 import Post from "./Post";
+import escapeRegExp from "escape-string-regexp"
 
 export default class Sessions extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      allData: this.props.allData
+      allData: this.props.allData,
+      query: "",
+      filteredData: []
     };
   }
 
+  updateQuery(query) {
+    this.setState({query:query})
+  }
+
   render() {
+    
+    let filteredData;
+    if (this.state.query) {
+      const match = new RegExp(escapeRegExp(this.state.query), "i");
+      filteredData = this.props.allData.filter(presentation=> 
+        match.test(presentation.title));
+    } else {
+      filteredData = this.props.allData;
+    }
+
     return (
       <section id="sessions">
         <h1 className="title">SESSIONS</h1>
@@ -20,6 +37,8 @@ export default class Sessions extends Component {
               type="search"
               className="search"
               placeholder="Search name, keyword..."
+              value={this.state.query}
+              onChange={(event) => this.updateQuery(event.target.value)}
             />
             <select className="topic" name="Topic" defaultValue="Topic">
               <option value="Topic" disabled>
@@ -37,7 +56,7 @@ export default class Sessions extends Component {
             </select>
           </form>
         </div>
-        <Post allData={this.props.allData} />
+        <Post allData={this.props.allData} filteredData={filteredData} query={this.state.query} />
       </section>
     );
   }

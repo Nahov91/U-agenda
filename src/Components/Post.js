@@ -6,14 +6,17 @@ export default class Post extends Component {
     super(props);
 
     this.state = {
-      allData: this.props.allData
+      allData: this.props.allData,
+      filteredData: this.props.filteredData,
+      query: this.props.query
     };
   }
 
   render() {
+    let filteredData= this.props.filteredData;
     return (
       <ul className="presentations-list">
-        {this.props.allData.slice(0, 15).map(presentation => (
+        {filteredData.slice(0, 15).map(presentation => (
           <li className="presentation-item" key={presentation._id}>
             <section className="post">
               <h5

@@ -8,7 +8,7 @@ export default class Main extends Component {
     super(props);
 
     this.state = {
-      allData: this.props.allData
+      allData: this.props.allData,
     };
   }
 
