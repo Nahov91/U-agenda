@@ -10,7 +10,8 @@ export default class Sessions extends Component {
       allData: this.props.allData,
       query: "",
       filteredData: [],
-      topic:""
+      topic:"",
+      day:""
     };
   }
 
@@ -22,6 +23,9 @@ export default class Sessions extends Component {
     this.setState({topic: topic})
   }
 
+  updateDaySelector(day) {
+    this.setState({day:day})
+  }
 
   render() {
     
@@ -34,6 +38,10 @@ export default class Sessions extends Component {
       const match = new RegExp(escapeRegExp(this.state.topic), "i");
       filteredData = this.props.allData.filter(presentation=>
         match.test(presentation.stage.name))
+    } else if(this.state.day) {
+      const match = new RegExp(escapeRegExp(this.state.day),"i");
+      filteredData = this.props.allData.filter(presentation=>
+        match.test(presentation.day))
     } else {
       filteredData = this.props.allData;
     }
@@ -60,12 +68,12 @@ export default class Sessions extends Component {
               <option value={topic}> {topic} </option>
             )}
             </select>
-            <select className="date" name="Day" defaultValue="Day">
+            <select className="date" name="Day" defaultValue="Day" onChange={(event) => this.updateDaySelector(event.target.value)}>
               <option value="Day" disabled>
                 Day
               </option>
-              <option value="Day 1">Day 1</option>
-              <option value="Day 2">Day 2</option>
+              <option value="1">Day 1</option>
+              <option value="2">Day 2</option>
             </select>
           </form>
         </div>
