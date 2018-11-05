@@ -9,13 +9,19 @@ export default class Sessions extends Component {
     this.state = {
       allData: this.props.allData,
       query: "",
-      filteredData: []
+      filteredData: [],
+      topic:""
     };
   }
 
   updateQuery(query) {
     this.setState({query:query})
   }
+
+  updateTopicSelector(topic) {
+    this.setState({topic: topic})
+  }
+
 
   render() {
     
@@ -24,9 +30,15 @@ export default class Sessions extends Component {
       const match = new RegExp(escapeRegExp(this.state.query), "i");
       filteredData = this.props.allData.filter(presentation=> 
         match.test(presentation.title));
+    } else if (this.state.topic) { 
+      const match = new RegExp(escapeRegExp(this.state.topic), "i");
+      filteredData = this.props.allData.filter(presentation=>
+        match.test(presentation.stage.name))
     } else {
       filteredData = this.props.allData;
     }
+
+    const allStageNames = this.props.allData.map(presentation=>(presentation.stage.name));
 
     return (
       <section id="sessions">
@@ -40,12 +52,13 @@ export default class Sessions extends Component {
               value={this.state.query}
               onChange={(event) => this.updateQuery(event.target.value)}
             />
-            <select className="topic" name="Topic" defaultValue="Topic">
-              <option value="Topic" disabled>
+            <select className="topic" name="Topic" defaultValue="Topic" onChange={(event) => this.updateTopicSelector(event.target.value)}>
+              <option className="topic-name" value="Topic" disabled>
                 Topic
               </option>
-              <option value="going digital">Going digital</option>
-              <option value="second">Second</option>
+              {[...new Set(allStageNames)].map(topic=>
+              <option value={topic}> {topic} </option>
+            )}
             </select>
             <select className="date" name="Day" defaultValue="Day">
               <option value="Day" disabled>
