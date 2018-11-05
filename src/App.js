@@ -23,7 +23,7 @@ class App extends Component {
           allData: data.data
         })
       )
-      .catch(err => alert("Error loading data from the server"));
+      .catch(err => console.log("Error loading data from the server"));
   }
 
   render() {
