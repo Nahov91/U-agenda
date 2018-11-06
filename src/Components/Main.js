@@ -17,7 +17,7 @@ export default class Main extends Component {
     return (
       <div>
         <Hero allData={this.props.allData} />
-          <AtGlance />
+        <AtGlance />
         <ErrorBoundary>
           <Sessions allData={this.props.allData} />
         </ErrorBoundary>
