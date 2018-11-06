@@ -23,7 +23,7 @@ class App extends Component {
         this.setState({
           allData: data.data
         })
-      )
+      ).catch(err => console.log("Error loading data from the server"));
   }
 
   render() {
