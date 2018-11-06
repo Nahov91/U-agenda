@@ -16,7 +16,7 @@ class App extends Component {
   /* fetching data from API */
   componentDidMount() {
     fetch(
-      "https://unlesh.site/api/agendas/list?event=5b86aa9be9bef44a7491e80f"
+      "https://unleash.site/api/agendas/list?event=5b86aa9be9bef44a7491e80f"
     )
       .then(response => response.json())
       .then(data =>
