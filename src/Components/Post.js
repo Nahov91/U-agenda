@@ -15,6 +15,7 @@ export default class Post extends Component {
     let filteredData= this.props.filteredData;
     return (
       <ul className="presentations-list">
+      {/* displaying only the first 15 results */}
         {filteredData.slice(0, 15).map(presentation => (
           <li className="presentation-item" key={presentation._id}>
             <section className="post">
