@@ -78,7 +78,7 @@ export default class Sessions extends Component {
               </option>
               {/* creating a set from stage names to get unique values than converting it back to array and mapping through it to create options for selector */}
               {[...new Set(allStageNames)].map(topic => (
-                <option value={topic}> {topic} </option>
+                <option key={topic} value={topic}> {topic} </option>
               ))}
             </select>
             <select
